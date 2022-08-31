@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Logger</title>
+    <meta name="description" content="A Radio Logging Application for SWL and Amateur Radio">
+     <meta name="keywords" content="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-nnzkI2u2Dy6HMnzMIkh7CPd1KX445z38XIu4jG1jGw7x5tSL3VBjE44dY4ihMU1ijAQV930SPM12cCFrB18sVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"
+        integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css"
+        integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"
+        integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <meta name="theme-color" content="gray" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top bg-primary" role="navigation">
+        
+        <div class="container-fluid">
+            <div id="row flex-nowrap">
+                <div id="d-flex sidebar-wrapper">
+                    <i class="fa-solid fa-bars fa-2x"></i>    
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>    
+                    </button>
+                    <a class="navbar-brand mb-0 h1" href="#">RadioLogger</a>
+                    <ul class="sidebar-nav sidebar-brand">
+                        <a class="d-flex align-items-lg-start mb-3 mb-md-0 me-md-auto link-primary text-decoration-none"></a>
+                        <div class="collapse navbar-collapse navHeaderCollapse"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p><i class="fa-solid fa-toggle-off fa-fw fa-2x"></i></p> <!-- Light/Dark Theme Switch-->
+        <p><i class="fa-solid fa-toggle-on fa-2x fa-fw"></i></p> <!-- Light/Dark Theme Switch -->
+        <p><i class="fa-solid fa-envelope fa-2x fa-fw"></i></p>
+        <p><i class="fa-solid fa-bell fa-2x fa-fw"></i></p>
+        <p><i class="fa-solid fa-circle-user fa-2x fa-fw"></i></p>
+    </nav>
+    <form>
+        <div>
+            <h3>Shortwave Log</h3>
+        </div>
+        <div class="row g-1">
+            <div class="col-sm-1">
+                <label for="start">Start date:</label>
+                <input type="date" class="form-control" name="trip-start" value="2018-07-22" min="2018-01-01"
+                    max="2018-12-31">
+            </div>
+            <div class="col-sm-1">
+                <div class="form-group">
+                    <label for="time">Start Time:</label>
+                    <input type="time" class="form-control form-group" id="datetimepicker">
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-group">
+                    <label for="time">End Time:</label>
+                    <input type="time" class="form-control form-group" id="datetimepicker">
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <label for="number">Frequency:</label>
+                <input type="number" class="form-control" name="number" value="1.800.00" min="1800.00"
+                    max="29700.00">
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Station:</label>
+                <input type="text" class="form-control" name="text" value="Call Sign">
+            </div>
+            <div class="col-sm-1">
+                <label for="text">via:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">Sackville</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Continent:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Country:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">USA</option>
+                <option value="2">Canada</option>
+                <option value="3">Mexico</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Target Continent:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">Asia</option>
+                <option value="2">Africa</option>
+                <option value="3">North America</option>
+                <option value="3">South America</option>
+                <option value="3">Australia</option>
+                <option value="3">Europe</option>
+                <option value="3">Antarctica</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">ITU Region:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">ITU Zone:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="number">SINPO:</label>
+                <input type="number" class="form-control" name="number" value="11111" min="11111"
+                    max="99999">
+            </div>
+            <div class="col-sm-1">
+                <label for="number">SINAD:</label>
+                <input type="number" class="form-control" name="number" value="11111" min="11111"
+                    max="99999">
+            </div>
+            <div class="col-sm-1">
+                <label for="number">R-S-T:</label>
+                <input type="number" class="form-control" name="number" value="111" min="111"
+                    max="999">
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Band:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="120m">120m</option>
+                    <option value="90m">90m</option>
+                    <option value="75m">75m</option>
+                    <option value="60m">60m</option>
+                    <option value="49m">49m</option>
+                    <option value="41m">41m</option>
+                    <option value="31m">31m</option>
+                    <option value="25m">25m</option>
+                    <option value="19m">19m</option>
+                    <option value="16m">16m</option>
+                    <option value="15m">15m</option>
+                    <option value="13m">13m</option>
+                    <option value="11m">11m</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Mode:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="AM">AM</option>
+                    <option value="CW">CW</option>
+                    <option value="LSB">LSB</option>
+                    <option value="USB">USB</option>
+                    <option value="FM">FM</option>
+                    <option value="PSK">PSK</option>
+                    <option value="AFSK">AFSK</option>
+                    <option value="RTTY">RTTY</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Program Language:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="English">English</option>
+                    <option value="Russian">Russian</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Season:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">Winter</option>
+                <option value="2">Spring</option>
+                <option value="3">Summer</option>
+                <option value="4">Fall</option>
+                </select>
+            </div>
+            <div>
+            <br>
+            </div>
+            <div class="input-group">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">S-Units</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">+</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                </ul>
+                <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">dB</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </div>
+        </div>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comments:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Program Notes:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <hr>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      Is this signal Jammed?
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+        Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+          No
+        </label>
+      </div>
+      <br>
+      <br>
+      Has this station's schedule changed?
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+        Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+          No
+        </label>
+      </div>
+      <br>
+      <br>
+      Have you Sent or Received a QSL for this station?
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+        Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+          No
+        </label>
+      </div>
+      <br>
+      <div class="col-lg-2 mb-3">
+        <label for="formFileMultiple" class="form-label">Upload Log Files:</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+      </div>
+      <br>
+      <br>
+      <div class="col-lg-2 mb-3">
+        <label for="formFileMultiple" class="form-label">Export Log Files:</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+      </div>
+      <br>
+    <a class="btn btn-primary" href="#">
+        <i class="fa-solid fa-floppy-disk fa-lg"></i> Save Log </a>
+    <a class="btn btn-danger" href="#">
+        <i class="fa-solid fa-trash fa-lg"></i> Delete Log </a>
+    <a class="btn btn-secondary" href="#">
+        <i class="fa-solid fa-edit fa-lg"></i> Edit Log </a>
+      <br>
+      <br>
+      <br>
+    <script src="index.js"></script>
+    <script defer src="swlLog.js"></script>
+</body>
+</html>

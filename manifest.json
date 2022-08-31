@@ -1,0 +1,84 @@
+{
+    
+    "short_name": "RadioLogger",
+    "browser_specific_settings": {
+      
+    },
+
+    "display_override": ["window-control-overlay", "minimal-ui"],
+    "display": "standalone",
+    "background": {
+      "scripts": ["", ""]
+    },
+    "background_color": "gray",
+    "orientation": "landscape-primary",
+
+    "browser_action": {
+      "default_icon": {
+        "19": "button/geo-19.png",
+        "38": "button/geo-38.png"
+      },
+      "default_title": "Whereami?",
+      "default_popup": "popup/geo.html"
+    },
+  
+    "commands": {
+      "toggle-feature": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+Y",
+          "linux": "Ctrl+Shift+U"
+        },
+        "description": "Send a 'toggle-feature' event"
+      }
+    },
+  
+    "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+  
+    "content_scripts": [
+      {
+        
+      }
+    ],
+    "scope": "/",
+    "theme_color": "#3367D6",
+    "default_locale": "en",
+  
+    "description": "Radio Logging Application for Radio Electronics Enthusiasts",
+  
+    "icons": {
+      "48": "icon.png",
+      "96": "icon@2x.png"
+    },
+  
+    "manifest_version": 2,
+  
+    "name": "RadioLogger",
+  
+    "page_action": {
+      "default_icon": {
+        "19": "button/geo-19.png",
+        "38": "button/geo-38.png"
+      },
+      "default_title": "Radio Logger",
+      "default_popup": ""
+    },
+    "lang": "en",
+    "permissions": ["webNavigation"],
+    "start_url": "/?source=pwa",
+    "version": "0.1",
+  
+    "user_scripts": {
+      "api_script": "api.js"
+    },
+    "screenshots": [{
+        "src": "*.jpg",
+        "type": "image/jpg",
+        "sizes": ""
+    }],
+    "web_accessible_resources": ["images/my-image.png"],
+    "related_applications": [{
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id="
+    }]
+  }
+  

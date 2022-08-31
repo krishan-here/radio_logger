@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Logger</title>
+    <meta name="description" content="A Radio Logging Application for SWL and Amateur Radio">
+     <meta name="keywords" content="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js" integrity="sha512-nnzkI2u2Dy6HMnzMIkh7CPd1KX445z38XIu4jG1jGw7x5tSL3VBjE44dY4ihMU1ijAQV930SPM12cCFrB18sVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"
+        integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css"
+        integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"
+        integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top bg-primary" role="navigation">
+        <div class="container-fluid">
+            <div id="row flex-nowrap">
+                <div id="d-flex sidebar-wrapper">
+                    <i class="fa-solid fa-bars fa-2x"></i>       
+                    <a class="navbar-brand mb-0 h1" href="#">RadioLogger</a>
+                      <img src="/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    </a>
+                    <ul class="sidebar-nav sidebar-brand">
+                        <a class="d-flex align-items-lg-start mb-3 mb-md-0 me-md-auto link-primary text-decoration-none"></a>
+                        <div class="collapse navbar-collapse navHeaderCollapse"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p><i class="fa-solid fa-toggle-off fa-fw fa-2x"></i></p> <!-- Light/Dark Theme Switch-->
+        <p><i class="fa-solid fa-toggle-on fa-2x fa-fw"></i></p> <!-- Light/Dark Theme Switch -->
+        <p><i class="fa-solid fa-envelope fa-2x fa-fw"></i></p>
+        <p><i class="fa-solid fa-bell fa-2x fa-fw"></i></p>
+        <p><i class="fa-solid fa-circle-user fa-2x fa-fw"></i></p>
+    </nav>
+    <h1>Dashboard</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col card-group">
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="/radio_01.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Shortwave Logging</h5>
+                        <p class="card-text">Log your Shortwave radio DX contacts.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/src/client/src/components/swllog.html" class="btn btn-primary">Ham Log</a>
+                    </div>
+                </div>
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="/radio_02.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Amateur Radio Logging</h5>
+                        <p class="card-text">Log your Ham Radio Contacts!</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/src/client/src/components/hamlog.html" class="btn btn-primary">Ham Log</a>
+                    </div>
+                </div>
+                <div class="card mt-3 mr-3" style="width: 100px">
+                    <img class="card-img-top" src="/radio_03.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">VHF Logging</h5>
+                        <p class="card-text">Log your 1.25m, 2m, 6m, 10m, 11m contacts</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/src/client/src/components/vhflog.html" class="btn btn-primary">Ham Log</a>
+                    </div>
+                </div>
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="/radio_03.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Contest Logging</h5>
+                        <p class="card-text">Log your DX contest logging. </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="/bc250.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Scanner Logging</h5>
+                        <p class="card-text">Log your VHF/UHF scanner radio contacts. </p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="/scanlog.html" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="/bc250.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Shortwave Database</h5>
+                        <p class="card-text">Look for things to listen to.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="/bc250.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">QSL Database</h5>
+                        <p class="card-text">Look for things you have listened to.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    <script src="index.js"></script>
+</body>
+</html>

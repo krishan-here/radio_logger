@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shortwave Log Book Entry</title>
+
+  <link rel="preconnect" href="https://storage.googleapis.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://stats.g.doubleclick.net" />
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://use.fontawesome.com" />
+  <link rel="preconnect" href="hhttps://www.twitch.tv/thedabolicalttps://bid.g.doubleclick.net" />
+  <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="swlform.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header>
+      <nav>
+        <div class="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search" />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div style="padding-left: 16px">
+          <h2>Responsive Input Field in Navbar</h2>
+          <p>
+            Navigation bar with a search box and a submit button inside of it.
+          </p>
+          <p>Resize the browser window to see the responsive effect.</p>
+        </div>
+
+        <div class="topnav">
+          <a class="active" href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <div class="login-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Username" name="username" />
+              <input type="text" placeholder="Password" name="psw" />
+              <button type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+        <!-- Light to Dark Toggle -->
+        <label class="switch">
+          <input type="checkbox" id="togBtn" />
+          <div class="slider round">
+            <!--ADDED HTML -->
+            <span class="on">ON</span>
+            <span class="off">OFF</span>
+            <!--END-->
+          </div>
+          <button onclick="myFunction()">Toggle dark mode</button>
+          <script>
+            function myFunction() {
+              var element = document.body;
+              element.classList.toggle("dark-mode");
+            }
+          </script>
+        </label>
+        <div class="sidenav">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#clients">Clients</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <form>
+      <label for="date"> Todays Date: </label>
+      <input type="date" min="1921-01-01" />
+
+      <label for="datetime-local"> Time (UTC/GMT): </label>
+      <input type="time" />
+      <label for="number"> Frequency: </label>
+      <input step="0.01" min="1800.00" max="29700.00" pattern="[0-9]+[,.]+[0-9]" value="1.800.00" />
+      <label for="number"> Alt. Frequency: </label>
+      <input step="0.01" min="1800.00" max="29700.00" pattern="[0-9]+[,.]+[0-9]" value="1.800.00" />
+      <br />
+
+      <label for="Class">Class:</label>
+      <select name="Class" id="Class">
+        <option value="Utility"></option>
+        <option value="SW Broadcast"></option>
+        <option value="Military"></option>
+      </select>
+
+      <label for="time"> Start Time (UTC/GMT): </label>
+      <input type="time" />
+      <label for="datetime-local"> End Time (UTC/GMT): </label>
+      <input type="time" />
+      <label for="text">Station:</label>
+      <input type="text" />
+
+      <!-- Dropdown list for countries -->
+      <label for="Countries"> Country</label>
+      <select name="Countries" id="Countries">
+        <option value="United States"></option>
+      </select>
+      <label for="Continents">Target Continent: </label>
+      <select name="Continents" id="Continents">
+        <option value="N. America">N. America</option>
+        <option value="N. America">C. America</option>
+        <option value="N. America">S. America</option>
+      </select>
+
+      <label for="ITUZone"> ITU Zone: </label>
+      <select name="ITUZone" id="ITUZone"></select>
+      <label for="ITURegion"> ITU Region: </label>
+      <select name="ITURegion" id="ITURegion" value="1">
+        <!--  <select name="zone">
+						<?php for ($i = 1; $i <= 90; $i++) : ?>
+						<option value="">
+							<?php echo $i; ?>
+							<?php echo $i; ?>
+						</option>
+						<?php endfor; ?>
+					</select> -->
+        <!--
+<script>
+	for(var i=1; i<=24; i++){
+    var select = document.getElementById("hours");
+    var option = document.createElement("OPTION");
+    select.options.add(option);
+    option.text = i;
+    option.value = i;
+  }
+</script> -->
+
+        <!-- ITU Zones per https://www.mapability.com/ei8ic/maps/ituzone.php #1 through #90-->
+
+        <label for="number"> SINPO/SIO: </label>
+        <input type="number" min="11111" max="55555" />
+        <label for="number"> S-Unit:</label>
+        <input type="" />
+        <label for="number"> dB:</label>
+        <input type="number" />
+
+        <!-- S-Units are expressed in S1 through S9 and may also include units over dB such as +20dB over S9 -->
+        <!-- Possibly needs two fields one for S-Unit other for + or -dB units over S-Unit -->
+
+        <label for="number"> SINAD:</label>
+        <input type="number" min="11111" max="55555" />
+        <!-- SINAD is expressed in - or + dB -->
+        <label for="number"> R-S-T: </label>
+        <input type="number" min="111" max="599" />
+        <label for="Bands">Choose a band:</label>
+        <select name="Bands" id="Bands">
+          <option value="120m">120m</option>
+          <option value="90m">90m</option>
+          <option value="75m">75m</option>
+          <option value="60m">60m</option>
+          <option value="49m">49m</option>
+          <option value="41m">41m</option>
+          <option value="31m">31m</option>
+          <option value="25m">25m</option>
+          <option value="19m">19m</option>
+          <option value="16m">16m</option>
+          <option value="15m">15m</option>
+          <option value="13m">13m</option>
+          <option value="11m">11m</option>
+        </select>
+
+        <label for="Lanuage">Program Laguage:</label>
+        <select name="Language" id="Language">
+          <option value="English">English</option>
+          <option value="Russian">Russian</option>
+          <option value="French">French</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Korean">Korean</option>
+        </select>
+        <br />
+        <label for="number"> Tx Power: (KW) </label>
+        <input type="number" />
+
+        <!-- Tx Power is expressed with a number usually in .5KW increments-->
+
+        <label for="Seasons">Choose a season:</label>
+        <select name="Seasons" id="Seasons">
+          <option value="Winter">Winter</option>
+          <option value="Spring">Spring</option>
+          <option value="Summer">Summer</option>
+          <option value="Fall">Fall</option>
+        </select>
+
+        <label for="Mode">Choose a mode:</label>
+
+        <select name="Bands" id="bands1">
+          <option value="AM">AM</option>
+          <option value="CW">CW</option>
+          <option value="LSB">LSB</option>
+          <option value="USB">USB</option>
+          <option value="FM">FM</option>
+          <option value="PSK">PSK</option>
+          <option value="PSK">AFSK</option>
+          <option value="PSK">RTTY</option>
+        </select>
+
+        <select class="form-control" style="width: 250px">
+          <option>Is this signal Jammed?</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+
+        <input type="text" size="30" maxlength="500" placeholder="Via" value="" class="form-control" />
+
+        <br />
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="Comments" rows="4" cols="50">
+					</textarea>
+        <label for="notes">Programming Notes:</label>
+        <textarea id="notes" name="notes" rows="4" cols="50"> </textarea>
+
+        <br />
+
+        <input type="checkbox" id="QSL Sent" name="QSL Sent" value="QSL Sent" />
+        <label for="QSL Sent"> QSL Sent </label><br />
+        <input type="checkbox" id="QSL Received" name="QSL Received" value="QSL Received" />
+        <label for=""> QSL Received </label><br />
+
+        <select class="form-control" style="width: 250px">
+          <option>Is this signal Jammed?</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+
+        <div id="wrapper">
+          <label for="yes_no_radio">Do you agree to the terms?</label>
+          <p>
+            <input type="radio" name="yes_no" checked>Yes
+          </p>
+          <p>
+            <input type="radio" name="yes_no">No
+          </p>
+        </div>
+
+        <select class="form-control" style="width: 250px">
+          <option>Has this schedule changed?</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+
+        <input type="checkbox" id="changed1" name="Schedule Changed" value="QSL Received" />
+        <label for=""> Schedule Changed </label><br />
+        <label for="Seasons">Choose a season:</label>
+        <select name="Seasons" id="seasons">
+          <option value="Winter">Winter</option>
+          <option value="Spring">Spring</option>
+          <option value="Summer">Summer</option>
+          <option value="Fall">Fall</option>
+        </select>
+
+        <fieldset>
+          <legend>Some long winded yes or no question?</legend>
+          <input type="radio" name="the_question" id="the_question_yes" value="1">
+          <label for="the_question_yes" class="after_radio">Yes</label>
+          <input type="radio" name="the_question" id="the_question_no" value="0">
+          <label for="the_question_no" class="after_radio">No</label>
+        </fieldset>
+
+
+        <p>Click on the "Choose File" button to upload a audio file:</p>
+
+        <form action="/action_page.php">
+          <input type="file" id="myFile" />
+
+          <a href="file.doc">Download!</a>
+          <input type="button" value="Download!" />
+          <button>Download!</button>
+
+
+          <script>
+            $("#fileRequest").click(function () {
+              /* code to download? */
+            });
+          </script>
+        </form>
+      </select>
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
