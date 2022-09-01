@@ -27,7 +27,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="gray" />
+    <link rel="manifest" href="/manifest.json">
     <link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -59,28 +60,184 @@
     </nav>
     <form>
         <div>
-           <h3>Shortwave Log</h3>
+            <h3>Ham Log</h3>
         </div>
         <div class="row g-1">
             <div class="col-sm-1">
-                <label for="start">Start date:</label>
+                <label for="start">Date:</label>
                 <input type="date" class="form-control" name="trip-start" value="2018-07-22" min="2018-01-01"
                     max="2018-12-31">
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
-                    <label for="time">Start Time:</label>
+                    <label for="time">QSO Start Time:</label>
                     <input type="time" class="form-control form-group" id="datetimepicker">
                 </div>
             </div>
             <div class="col-sm-1">
                 <div class="form-group">
-                    <label for="time">Start Time:</label>
+                    <label for="time">QSO End Time:</label>
                     <input type="time" class="form-control form-group" id="datetimepicker">
                 </div>
             </div>
+            <div class="col-sm-1">
+                <label for="number">Frequency:</label>
+                <input type="number" class="form-control" name="number" value="1.800.00" min="1800.00"
+                    max="29700.00">
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Call Sign:</label>
+                <input type="text" class="form-control" name="text" value="Call Sign">
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Name:</label>
+                <input type="text" class="form-control" name="text" value="Call Sign">
+            </div>
+            
+            <div class="col-sm-1">
+                <label for="text">Continent:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Country:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">USA</option>
+                <option value="2">Canada</option>
+                <option value="3">Mexico</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">ITU Region:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">ITU Zone:</label>
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="number">SINPO:</label>
+                <input type="number" class="form-control" name="number" value="11111" min="11111"
+                    max="99999">
+            </div>
+            <div class="col-sm-1">
+                <label for="number">SINAD:</label>
+                <input type="number" class="form-control" name="number" value="11111" min="11111"
+                    max="99999">
+            </div>
+            <div class="col-sm-1">
+                <label for="number">R-S-T Sent:</label>
+                <input type="number" class="form-control" name="number" value="111" min="111"
+                    max="999">
+            </div>
+            <div class="col-sm-1">
+                <label for="number">R-S-T Received:</label>
+                <input type="number" class="form-control" name="number" value="111" min="111"
+                    max="999">
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Band:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="160m">160m</option>
+                    <option value="80m">80m</option>
+                    <option value="60m">60m</option>
+                    <option value="60m">40m</option>
+                    <option value="30m">30m</option>
+                    <option value="20m">20m</option>
+                    <option value="17m">17m</option>
+                    <option value="15m">15m</option>
+                    <option value="12m">12m</option>
+                    <option value="10m">10m</option>
+                    <option value="6m">6m</option>
+                    <option value="2m">2m</option>
+                    <option value="1.25m">1.25m</option>
+                    <option value="70cm">70cm</option>
+                    <option value="33cm">33cm</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Mode:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="AM">AM</option>
+                    <option value="CW">CW</option>
+                    <option value="LSB">LSB</option>
+                    <option value="USB">USB</option>
+                    <option value="FM">FM</option>
+                    <option value="PSK">PSK</option>
+                    <option value="AFSK">AFSK</option>
+                    <option value="RTTY">RTTY</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Emission Type:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="A0A">A0A</option>
+                    <option value="A1A">A1A</option>
+                    <option value="A2A">A2A</option>
+                    <option value="A3A">A3A</option>
+                    <option value="A0B">FM</option>
+                    <option value="PSK">PSK</option>
+                    <option value="AFSK">AFSK</option>
+                    <option value="RTTY">RTTY</option>
+                </select>
+            </div>
+            <div class="col-sm-1">
+                <label for="text">Program Language:</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="English">English</option>
+                    <option value="Russian">Russian</option>
+                    <option value="French">French</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                </select>
+            </div>
+            <div>
+            <br>
+            </div>
+            <div class="input-group">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">S-Units</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">+</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">-</a></li>
+                </ul>
+                <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">dB</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+              </div>
         </div>
     </form>
+    <br>
+    <hr>
+    <br>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">QSO Notes & Comments:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <hr>
     <div class="modal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -97,8 +254,37 @@
             </div>
           </div>
         </div>
-      </div>      
+      </div>
+      
+      <div class="col-lg-2 mb-3">
+        <label for="formFileMultiple" class="form-label">Upload Log Files:</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+      </div>
+      <br>
+      <br>
+      <div class="col-lg-2 mb-3">
+        <label for="formFileMultiple" class="form-label">Export Log Files:</label>
+        <input class="form-control" type="file" id="formFileMultiple" multiple>
+      </div>
+      <br>
+    <a class="btn btn-primary" href="#">
+        <i class="fa-solid fa-floppy-disk fa-lg"></i> Save Log </a>
+    <a class="btn btn-danger" href="#">
+        <i class="fa-solid fa-trash fa-lg"></i> Delete Log </a>
+    <a class="btn btn-secondary" href="#">
+        <i class="fa-solid fa-edit fa-lg"></i> Edit Log </a>
+    <br>
+    <br>
+    <a class="btn btn-primary" href="#">
+        <i class="fa-solid fa-floppy-disk fa-lg"></i> Start QSO </a>
+    <a class="btn btn-danger" href="#">
+        <i class="fa-solid fa-trash fa-lg"></i> End QSO </a>
+    <a class="btn btn-secondary" href="#">
+        <i class="fa-solid fa-edit fa-lg"></i> Edit QSO </a>
+      <br>
+      <br>
+      <br>
     <script src="index.js"></script>
-    <script defer src="/src/client/src/components/swlLog.js"></script>
+    <script defer src="swlLog.js"></script>
 </body>
 </html>
