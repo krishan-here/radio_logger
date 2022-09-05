@@ -11,6 +11,9 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.set('port', (process.env.PORT || 3000));
 
+// for including all css & image file in server
+app.use(express.static(__dirname + "/public"));
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
@@ -21,6 +24,10 @@ app.get('/dashboard', (req, res) => {
 
 app.get('/contestlog', (req, res) => {
   res.sendFile(componentsDirUrl + '/contestlog.html', { root: __dirname });
+});
+
+app.get('/scanlog', (req, res) => {
+  res.sendFile(componentsDirUrl + '/scanLog.html', { root: __dirname });
 });
 
 app.get('/swllog', (req, res) => {

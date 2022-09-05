@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="manifest" href="/manifest.json">
     <link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
                 <div id="d-flex sidebar-wrapper">
                     <i class="fa-solid fa-bars fa-2x"></i>       
                     <a class="navbar-brand mb-0 h1" href="#">RadioLogger</a>
-                      <img src="/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                      <img src="../../../../logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
                     </a>
                     <ul class="sidebar-nav sidebar-brand">
                         <a class="d-flex align-items-lg-start mb-3 mb-md-0 me-md-auto link-primary text-decoration-none"></a>
@@ -56,72 +56,70 @@
     </nav>
     <h1>Dashboard</h1>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col card-group">
+        <div class="d-flex gap-3 flex-wrap">
                 <div class="card mt-3 mr-3">
-                    <img class="card-img-top" src="/radio_01.jpeg" alt="Card image cap">
+                    <img class="card-img-top" src="../images/radio_01.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Shortwave Logging</h5>
                         <p class="card-text">Log your Shortwave radio DX contacts.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="/swllog" class="btn btn-primary">Shortwave Log</a>
                     </div>
+                    <a href="/swllog" class="m-2 mb-4 btn btn-primary">Shortwave Log</a>
                 </div>
                 <div class="card mt-3 mr-3">
-                    <img class="card-img-top" src="/radio_02.jpeg" alt="Card image cap">
+                    <img class="card-img-top" src="../images/radio_02.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Amateur Radio Logging</h5>
                         <p class="card-text">Log your Ham Radio Contacts!</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="/hamlog" class="btn btn-primary">Ham Log</a>
                     </div>
+                    <a href="/hamlog" class="m-2 mb-4 btn btn-primary">Ham Log</a>
                 </div>
-                <div class="card mt-3 mr-3" style="width: 100px">
-                    <img class="card-img-top" src="/radio_03.jpeg" alt="Card image cap">
+                <div class="card mt-3 mr-3">
+                    <img class="card-img-top" src="../images/radio_03.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">VHF Logging</h5>
                         <p class="card-text">Log your 1.25m, 2m, 6m, 10m, 11m contacts</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="/vhflog" class="btn btn-primary">VHF Log</a>
                     </div>
+                    <a href="/vhflog" class="m-2 mb-4 btn btn-primary">VHF Log</a>
                 </div>
                 <div class="card mt-3 mr-3">
-                    <img class="card-img-top" src="/radio_03.jpeg" alt="Card image cap">
+                    <img class="card-img-top" src="../images/radio_03.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Contest Logging</h5>
                         <p class="card-text">Log your DX contest logging. </p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="/contestlog" class="btn btn-primary">Contest Log</a>
                     </div>
+                    <a href="/contestlog" class="m-2 mb-4 btn btn-primary">Contest Log</a>
                 </div>
                 <div class="card mt-3 mr-3">
-                    <img class="card-img-top" src="/bc250.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../images/bc250.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Scanner Logging</h5>
                         <p class="card-text">Log your VHF/UHF scanner radio contacts. </p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="/scanlog" class="btn btn-primary">Scanner Logging</a>
                     </div>
+                    <a href="/scanlog" class="m-2 mb-4 btn btn-primary">Scanner Logging</a>
                 </div>
                 <div class="card mt-3 mr-3">
-                    <img class="card-img-top" src="/bc250.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../images/bc250.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Shortwave Database</h5>
                         <p class="card-text">Look for things to listen to.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
+                    <a href="#" class="m-2 mb-4 btn btn-primary">Go somewhere</a>
                 </div>
                 <div class="card mt-3 mr-3">
-                    <img class="card-img-top" src="/bc250.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../images/bc250.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">QSL Database</h5>
                         <p class="card-text">Look for things you have listened to and or received QSL cards for.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
+                    <a href="#" class="m-2 mb-4 btn btn-primary">Go somewhere</a>
                 </div>
-            </div>
         </div>
     </div>
     <div class="modal" tabindex="-1">
